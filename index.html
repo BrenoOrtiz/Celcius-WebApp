@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <script defer src="js/index.js"></script>
+    <script src="https://kit.fontawesome.com/d5fcfde473.js" crossorigin="anonymous"></script>
+    <title>Tempo</title>
+</head>
+<body>
+    <div class="content">
+        <nav>
+            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+            <input type="text" name="search" id="search-input" placeholder="Buscar cidade..." oninput="suggestion(this);">
+            <button id="reload-btn" onclick="reload()">
+                <i class="fa-solid fa-rotate-right fa-2xl"></i>
+            </button>
+        </nav>
+        <ul id="suggestion-list">
+        </ul>
+        <div class="day-info-container" id="day-info-container">
+            
+        </div>
+        <div class="forecast-container">
+            <div class="forecast-heading">
+                <span class="span-heading">Dia</span>
+                <span class="span-heading">Chuva</span>
+                <span class="span-heading">Tempo</span>
+                <span class="span-heading">Min</span>
+                <span class="span-heading">Média</span>
+                <span class="span-heading">Max</span>
+            </div>
+            <div class="forecast-data" id="forecast-data">
+                
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
