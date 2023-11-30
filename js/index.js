@@ -5,12 +5,15 @@ const APIURL_SEARCH = "https://api.weatherapi.com/v1/search.json";
 
 var containerCurrent = document.getElementById('day-info-container');
 var containerCurrentHours = document.getElementById('day-hours-container');
-var containerForecast = document.getElementById('forecast-data');
- 
+
+var containerForecastData = document.getElementById('forecast-data'); 
 var forecastContainer = document.querySelector('.forecast-container');
 
 var sliderParentContainer = document.getElementById('slider-parent-container');
 var sliderContainer = document.getElementById('slider-container');
+
+var contentToRender = document.getElementById('content-to-render');
+var loadingIcon = document.getElementById('loading-icon');
 
 
 
@@ -20,15 +23,13 @@ async function loadData(input) {
     var promise = await fetch(`${APIURL}?key=${APIKEY}&q=${city}&days=10&aqi=no&alerts=no&lang=pt`);
     var response = await promise.json();
     
-    if (promise.ok) {
+    try {
         // Dados da localização procurada
         var dataLocation = response.location;
         // Dados do tempo atuais
         var dataCurrent = response.current;
-        console.log(dataCurrent);
         // Dados da previsão do tempo dos prox 10 dias
         var dataforecast = response.forecast.forecastday;
-        console.log(dataforecast);
 
         forecastContainer.style.display = 'flex';
         sliderParentContainer.style.display = 'flex';
@@ -73,10 +74,10 @@ async function loadData(input) {
                     </div>`;
         })
         
-        containerForecast.innerHTML = ``; // Limpar conteúdo anterior
+        containerForecastData.innerHTML = ``; // Limpar conteúdo anterior
         for (var i = 1; i < dataforecast.length; i++) {
 
-            containerForecast.innerHTML +=` 
+            containerForecastData.innerHTML +=` 
             <div class="day-forecast-container">
                 <span id="day-forecast">${dataforecast[i].date.slice(-2)}</span>
                 <div class="chuva-forecast-container">
@@ -91,15 +92,14 @@ async function loadData(input) {
             `;
         }
 
-    } else {
-        forecastHeading.style.display = 'none';
+    } catch {
         if (city != "") {
             containerCurrent.innerHTML = `<h2 id="aviso-erro">Cidade "<span id="aviso-nome-cidade">${city}</span>" não foi encontrada</h2>`;
         }
         else {
             containerCurrent.innerHTML = ``;   
         }
-        containerForecast.innerHTML = ``;
+        containerForecastData.innerHTML = ``;
     }
     
 
@@ -136,10 +136,14 @@ async function suggestion(input) {
 async function applySuggestion(suggestion) {
     var input = document.getElementById('search-input');
     var suggestion_list = document.getElementById('suggestion-list');
-    input.value = suggestion.textContent;
-    suggestion_list.style.display = "none";
 
-    loadData(input);
+    input.value = suggestion.textContent;
+
+    suggestion_list.style.display = "none";
+    loadingIcon.style.display = "block";
+
+    await loadData(input);
+    loadingIcon.style.display = "none";
 }
 
 

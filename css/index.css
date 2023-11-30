@@ -25,6 +25,14 @@ body{
     align-items: center;
 }
 
+.contentToRender{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 nav{
     position: relative;
     margin-top: 32px;
@@ -307,6 +315,12 @@ li:hover{
     color: var(--accent-200);
 }
 
+#loading-icon{
+    display: none;
+    margin-top: 64px;
+    animation: rotate 1s linear infinite;
+}
+
 
 @keyframes rotate{
     from{
@@ -314,23 +328,5 @@ li:hover{
     }
     to{
         transform: rotate(360deg);
-    }
-}
-
-@keyframes slideLeft{
-    from{
-        transform: translateX(0);
-    }
-    to{
-        transform: translateX(10%);
-    }
-}
-
-@keyframes slideRight{
-    from{
-        transform: translateX(0);
-    }
-    to{
-        transform: translateX(-10%);
     }
 }
