@@ -37,7 +37,7 @@ nav{
 .fa-magnifying-glass{
     position: relative;
     left: 32px;
-    color: var(--text-100)
+    color: var(--text-200)
 }
 
 .fa-rotate-right{
@@ -51,7 +51,7 @@ nav{
     font-size: 16px;
     padding: 8px 0 8px 38px;
     border-radius: 8px;
-    border: 1px solid rgb(167, 167, 167);
+    border: none;
     color: var(--text-100);
 }
 
@@ -121,21 +121,34 @@ nav{
 }
 
 .forecast-container{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-top: 32px;
+}
+
+#title-forecast{
+    font-size: 28px;
+    color: var(--text-100);
+}
+
+.tempo-atual-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desc-tempo{
+    color: var(--accent-200);
+    font-size: 18px;
 }
 
 .forecast-heading{
-    display: none;
+    display: flex;
     width: 91%;
     justify-content: space-between;
     align-items: center;
-    background: rgba( 255, 255, 255, 0.15 );
-    backdrop-filter: blur( 13px );
-    -webkit-backdrop-filter: blur( 13px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
     border-radius: 8px;
     padding: 10px;
     margin-bottom: 16px;
@@ -143,13 +156,13 @@ nav{
 
 .span-heading{
     background: rgb(210,231,244);
-    background: linear-gradient(90deg, rgba(210,231,244,1) 0%, rgba(178,200,212,1) 100%);   
+    background: linear-gradient(90deg, rgba(210,231,244,1) 0%, rgba(178,200,212,1) 100%); 
     width: 50px;
     text-align: center;
     font-size: 18px;
     padding: 8px;
     border-radius: 8px;
-    color: var(--text-100);
+    color: var(--text-200);
 }
 
 .forecast-data{
@@ -162,11 +175,8 @@ nav{
 }
 
 .day-forecast-container{
-    background: rgba( 255, 255, 255, 0.00 );
-    backdrop-filter: blur( 6px );
-    -webkit-backdrop-filter: blur( 6px );
+    background-color: var(--bg-100);
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -191,38 +201,110 @@ nav{
 }
 
 ::-webkit-scrollbar{
-    background-color: var(--bg-100);
+    background-color: #C4D0E3;
+}
+
+div ::-webkit-scrollbar{
+    background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: var(--bg-300);
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
     border-radius: 10px;
 }
 
 ul{
     display: none;
     position: relative;
-    right: 16px;
+    top: 10px;
+    right: 22px;
     background-color: var(--bg-100);
     color: var(--text-200);
-    width: 30%;
+    width: 32%;
     margin: 0;
     padding: 0;
-    border-radius: 0 0 8px 8px;
-    border: 1px solid rgb(169, 169, 169);
+    border-radius: 8px;
+    border: none;
 }
 
 ul li{
-    padding: 8px;
+    padding: 12px;
     font-size: 18px;
     list-style: none;
-    border-radius: 0 0 8px 8px;
+    border-radius: 8px;
 
 }
 
 li:hover{
-    background-color: var(--bg-300);
+    background-color: var(--primary-200);
+    color: var(--bg-100);
     cursor: pointer;
+}
+
+.fa-chevron-left, .fa-chevron-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-100);
+    width: 25px;
+    height: 25px;
+    padding: 8px;
+}
+
+.fa-chevron-left:hover, .fa-chevron-right:hover{
+    color: var(--accent-100);
+}
+
+.slider-parent-container{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.slider-container{
+    width: 87%;
+    overflow-x: hidden;
+    padding-bottom: 18px;
+    mask: linear-gradient(90deg,#0000,#000 10% 80%,#0000);
+    -webkit-mask: linear-gradient(90deg,#0000,#000 10% 80%,#0000);
+}
+
+.day-hours-container{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    gap: 12px;
+    right: 0;
+    transition: left 0.3s ease, right 0.3s ease;
+}
+
+.animation-left{
+    animation: slideLeft 1s ease forwards;
+}
+
+.hour-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-200);
+    padding: 12px;
+    height: 170px;
+    width: 125px;
+    min-width: 125px;
+    border-radius: 10px;
+    box-shadow: 0px 7px 14px rgb(95, 95, 95, 0.33);
+}
+
+.horario{
+    margin: 0;
+    color: var(--text-200);
+}
+
+.card-temp{
+    font-size: 18px;
+    color: var(--accent-200);
 }
 
 
@@ -232,5 +314,23 @@ li:hover{
     }
     to{
         transform: rotate(360deg);
+    }
+}
+
+@keyframes slideLeft{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(10%);
+    }
+}
+
+@keyframes slideRight{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-10%);
     }
 }

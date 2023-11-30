@@ -19,10 +19,23 @@
         </nav>
         <ul id="suggestion-list">
         </ul>
+
         <div class="day-info-container" id="day-info-container">
             
         </div>
+        
+        <div class="slider-parent-container" id="slider-parent-container">
+            <i class="fa-solid fa-chevron-left fa-xl" onclick="slideLeft();"></i>
+            <div class="slider-container" id="slider-container">
+                <div class="day-hours-container" id="day-hours-container">
+                </div>
+            </div>
+            <i class="fa-solid fa-chevron-right fa-xl" onclick="slideRight();"></i>
+        </div>
+
         <div class="forecast-container">
+
+            <h2 id="title-forecast">Próximos Dias</h2>
             <div class="forecast-heading">
                 <span class="span-heading">Dia</span>
                 <span class="span-heading">Chuva</span>
@@ -31,9 +44,10 @@
                 <span class="span-heading">Média</span>
                 <span class="span-heading">Max</span>
             </div>
+
             <div class="forecast-data" id="forecast-data">
-                
             </div>
+
         </div>
 
     </div>
