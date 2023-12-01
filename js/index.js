@@ -30,6 +30,7 @@ async function loadData(input) {
         var dataCurrent = response.current;
         // Dados da previsão do tempo dos prox 10 dias
         var dataforecast = response.forecast.forecastday;
+        console.log(dataforecast);
 
         forecastContainer.style.display = 'flex';
         sliderParentContainer.style.display = 'flex';
@@ -37,8 +38,9 @@ async function loadData(input) {
         if (dataCurrent.is_day) { // Caso o local pesquisado esteja dia
             containerCurrent.innerHTML = `
             <div class="day-info-top">
-                <span>Hoje</span>
+                <span id="hoje-text">Hoje</span>
                 <p id="date">${dataLocation.localtime.replace(/-/g, '/')}</p>
+                <span class="sunrise-sunset-span">Amanhecer: <span>${dataforecast[0].astro.sunrise}</span> | Anoitecer: <span>${dataforecast[0].astro.sunset}</span> </span>
             </div>
             <div class="day-info-bottom">
                 <h2 id="temperature">${dataCurrent.temp_c}°C</h2>
@@ -51,8 +53,9 @@ async function loadData(input) {
         } else {  // Caso o local pesquisado esteja noite
             containerCurrent.innerHTML = `
             <div class="day-info-top">
-                <span>Hoje</span>
+                <span id="hoje-text">Hoje</span>
                 <p id="date">${dataLocation.localtime.replace(/-/g, '/')}</p>
+                <span class="sunrise-sunset-span">Amanhecer: <span>${dataforecast[0].astro.sunrise}</span> | Anoitecer: <span>${dataforecast[0].astro.sunset}</span> </span>
             </div>
             <div class="day-info-bottom">
                 <h2 id="temperature">${dataCurrent.temp_c}°C</h2>

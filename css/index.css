@@ -107,10 +107,19 @@ nav{
     margin: 0;
 }
 
-.day-info-top span{
+#hoje-text{
     color: var(--text-100);
     text-transform: uppercase;
     font-size: 26px;
+}
+
+.sunrise-sunset-span{
+    color: var(--text-100);
+    font-size: 18px;
+}
+
+.sunrise-sunset-span span{
+    color: var(--accent-200);
 }
 
 #date{
@@ -148,7 +157,7 @@ nav{
 }
 
 .desc-tempo{
-    color: var(--accent-200);
+    color: var(--primary-100);
     font-size: 18px;
 }
 
@@ -221,14 +230,17 @@ div ::-webkit-scrollbar{
     border-radius: 10px;
 }
 
+
+
 ul{
+    box-sizing: border-box;
     display: none;
-    position: relative;
-    top: 10px;
-    right: 22px;
+    position: absolute;
+    top: 95px;
+    right: calc((100vw/2) - 15.25%);
     background-color: var(--bg-100);
     color: var(--text-200);
-    width: 32%;
+    width: calc(30% + 38px);
     margin: 0;
     padding: 0;
     border-radius: 8px;
