@@ -11,6 +11,12 @@
 <body>
     <div class="content">
         <nav>
+            <label class="switch">
+                <input type="checkbox" id="temp-check" onclick="atualizarTemp(this);">
+                <span class="slider"></span>
+                <span class="temp-C-option temp-option">°C</span>
+                <span class="temp-F-option temp-option">°F</span>
+              </label>
             <i class="fa-solid fa-magnifying-glass fa-lg"></i>
             <input type="text" name="search" id="search-input" placeholder="Buscar cidade..." oninput="suggestion(this);">
             <button id="reload-btn" onclick="reload()">
@@ -25,16 +31,12 @@
 
         <div class="contentToRender" id="content-to-render">
 
-
-            <div class="day-info-container" id="day-info-container">
-                
-            </div>
+            <div class="day-info-container" id="day-info-container"></div>
             
             <div class="slider-parent-container" id="slider-parent-container">
                 <i class="fa-solid fa-chevron-left fa-xl" onclick="slideLeft();"></i>
                 <div class="slider-container" id="slider-container">
-                    <div class="day-hours-container" id="day-hours-container">
-                    </div>
+                    <div class="day-hours-container" id="day-hours-container"></div>
                 </div>
                 <i class="fa-solid fa-chevron-right fa-xl" onclick="slideRight();"></i>
             </div>
@@ -56,9 +58,15 @@
     
             </div>
 
+            <div class="more-info-container">
+                <h2 id="more-info-h2"><i class="fa-solid fa-plus fa-sm"></i>Informações</h2>
+                <div class="more-info-data" id="more-info-data">
+
+                </div>
+
+            </div>
 
         </div>
-
 
     </div>
 </body>
