@@ -7,7 +7,6 @@ var containerCurrent = document.getElementById('day-info-container');
 var containerCurrentHours = document.getElementById('day-hours-container');
 
 var containerForecastData = document.getElementById('forecast-data'); 
-
 var forecastContainer = document.querySelector('.forecast-container');
 
 var tempSufix = '°C';
@@ -20,6 +19,7 @@ var moreInfoSufixes = ['%', '', 'mm', '', 'km/h', 'km', '°C', 'mb', 'Índice EP
 const moreInfosTitles = ['Umidade', 'Índice UV', 'Precipitação', 'Direção do Vento', 'Velocidade do Vento' ,'Visibilidade', 'Sensação térmica', 'Pressão', 'Qualidade do Ar'];
 var moreInfos = ['humidity', 'uv', 'precip_mm', 'wind_dir', 'wind_kph', 'vis_km', 'feelslike_c', 'pressure_mb', 'us-epa-index'];
 var moreInfoContainer = document.getElementById('more-info-data');
+var moreInfoAllContainer = document.getElementById('more-info-container');
 
 var sliderParentContainer = document.getElementById('slider-parent-container');
 var sliderContainer = document.getElementById('slider-container');
@@ -42,10 +42,11 @@ async function loadData(input) {
         var dataCurrent = response.current;
         // Dados da previsão do tempo dos prox 10 dias
         var dataforecast = response.forecast.forecastday;
-        console.log(dataCurrent);
+        console.log(dataforecast);
 
         forecastContainer.style.display = 'flex';
         sliderParentContainer.style.display = 'flex';
+        moreInfoAllContainer.style.display = 'block';
         
         if (dataCurrent.is_day) { // Caso o local pesquisado esteja dia
             containerCurrent.innerHTML = `
@@ -143,17 +144,27 @@ async function loadData(input) {
         for (var i = 1; i < dataforecast.length; i++) {
 
             containerForecastData.innerHTML +=` 
-            <div class="day-forecast-container">
-                <span id="day-forecast">${dataforecast[i].date.slice(-2)}</span>
-                <div class="chuva-forecast-container">
-                    <i class="fa-solid fa-droplet"></i>
-                    <span id="chuva-forecast">${dataforecast[i].day.daily_chance_of_rain}%</span>
-                </div>
-                <img src="${dataforecast[i].day.condition.icon}" alt="tempo-img" height="50px" width="50px">
-                <span id="temp-min-forecast">${parseInt(dataforecast[i].day[userTemp[1]])}${tempSufix}</span>
-                <span id="temp-avg-forecast">${parseInt(dataforecast[i].day[userTemp[2]])}${tempSufix}</span>
-                <span id="temp-max-forecast">${parseInt(dataforecast[i].day[userTemp[3]])}${tempSufix}</span>
-            </div>
+                    <div class="day-forecast-container">
+                        <div class="day-forecast-heading">
+                            <span>Dia</span>
+                            <span>Chuva</span>
+                            <span>Tempo</span>
+                            <span>Min</span>
+                            <span>Média</span>
+                            <span>Max</span>
+                        </div>
+                        <div class="day-forecast-data">
+                            <span class="day-forecast">${dataforecast[i].date.slice(-2)}</span>
+                            <div class="chuva-forecast-container">
+                                <i class="fa-solid fa-droplet"></i>
+                                <span id="chuva-forecast">${dataforecast[i].day.daily_chance_of_rain}%</span>
+                            </div>
+                            <img src="${dataforecast[i].day.condition.icon}" alt="tempo-img" height="50px" width="50px">
+                            <span class="temp-min-forecast">${parseInt(dataforecast[i].day[userTemp[1]])}${tempSufix}</span>
+                            <span class="temp-avg-forecast">${parseInt(dataforecast[i].day[userTemp[2]])}${tempSufix}</span>
+                            <span class="temp-max-forecast">${parseInt(dataforecast[i].day[userTemp[3]])}${tempSufix}</span>
+                        </div>
+                    </div>
             `;
         }
 

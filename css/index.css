@@ -11,6 +11,10 @@
     --bg-300:#cccccc;
 }
 
+html{
+    height: 100vh;
+}
+
 body{
     margin: 0;
     height: 100%;
@@ -19,12 +23,17 @@ body{
 }
 
 .content{
+    min-height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
+#logo{
+    margin-top: 32px;
+    height: 125px;
+    aspect-ratio: 12/ 4;
+}
 .contentToRender{
     display: flex;
     flex-direction: column;
@@ -222,54 +231,54 @@ nav{
     font-size: 18px;
 }
 
-.forecast-heading{
-    display: flex;
-    width: 91%;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 16px;
-}
-
-.span-heading{
-    background: rgb(210,231,244);
-    background: linear-gradient(90deg, rgba(210,231,244,1) 0%, rgba(178,200,212,1) 100%); 
-    width: 50px;
-    text-align: center;
-    font-size: 18px;
-    padding: 8px;
-    border-radius: 8px;
-    color: var(--text-200);
-}
-
 .forecast-data{
     display: flex;
     flex-direction: column;
     width: 90%;
     padding: 10px;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .day-forecast-container{
     background-color: var(--bg-100);
     border-radius: 10px;
     display: flex;
+    flex-direction: column;
     width: 100%;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px;
-    border-radius: 4px;
     box-shadow: 0px 7px 14px rgb(95, 95, 95, 0.33);
 }
 
-.day-forecast-container span{
+
+.day-forecast-heading{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.day-forecast-heading span{
+    color: var(--accent-200);
+    font-size: 20px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.day-forecast-data{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.day-forecast-data span{
     width: 50px;
     text-align: center;
-    color: var(--text-100);
+    color: var(--text-200);
     font-size: 18px;
 }
+
 
 #aviso-nome-cidade{
     color: var(--accent-200);
@@ -288,7 +297,7 @@ div ::-webkit-scrollbar{
 }
 
 ::-webkit-scrollbar-thumb{
-    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
     border-radius: 10px;
 }
 
@@ -397,6 +406,7 @@ li:hover{
 }
 
 .more-info-container{
+    display: none;
     margin: 64px 64px;
     padding: 12px 22px 12px 22px;
     width: 90%;
@@ -450,7 +460,7 @@ li:hover{
 .card-more-info span{
     color: var(--accent-200);
     margin-bottom: 16px;
-    font-size: 56px;
+    font-size: 48px;
 }
 
 .card-more-info p{
@@ -514,6 +524,52 @@ li:hover{
 .fa-circle-info:hover{
     color: var(--primary-200);
 }
+
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    height: 175px;
+    width: 100%;
+    background-color: var(--primary-100);
+    padding: 16px 32px 16px 32px;
+    margin-top: 64px;
+}
+
+.footer-section{
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+}
+
+.footer-section-title{
+    margin: 16px 0 16px 0;
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.footer-section-links{
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.8);;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.footer-section-links:hover{
+    color: #333333;
+}
+
+.footer-section span{
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.footer-section p{
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
 
 
 @keyframes rotate{

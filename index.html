@@ -10,6 +10,7 @@
 </head>
 <body>
     <div class="content">
+        <img src="img/logo.png" alt="logo" id="logo">
         <nav>
             <label class="switch">
                 <input type="checkbox" id="temp-check" onclick="atualizarTemp(this);">
@@ -40,34 +41,40 @@
                 </div>
                 <i class="fa-solid fa-chevron-right fa-xl" onclick="slideRight();"></i>
             </div>
-    
+
+
             <div class="forecast-container">
-    
                 <h2 id="title-forecast">Próximos Dias</h2>
-                <div class="forecast-heading">
-                    <span class="span-heading">Dia</span>
-                    <span class="span-heading">Chuva</span>
-                    <span class="span-heading">Tempo</span>
-                    <span class="span-heading">Min</span>
-                    <span class="span-heading">Média</span>
-                    <span class="span-heading">Max</span>
-                </div>
-    
-                <div class="forecast-data" id="forecast-data">
-                </div>
-    
+                <div class="forecast-data" id="forecast-data">  </div>
             </div>
 
-            <div class="more-info-container">
+
+            <div class="more-info-container" id="more-info-container">
                 <h2 id="more-info-h2"><i class="fa-solid fa-plus fa-sm"></i>Informações</h2>
-                <div class="more-info-data" id="more-info-data">
-
-                </div>
-
+                <div class="more-info-data" id="more-info-data"></div>
             </div>
 
         </div>
 
+        
+    </div>
+
+    <div class="footer">
+        <div class="footer-section">
+            <h3 class="footer-section-title">Redes Sociais</h3>
+            <a class="footer-section-links" href="#">Github <i class="fa-brands fa-github fa-lg"></i></a>
+            <a class="footer-section-links" href="#">Linkedin <i class="fa-brands fa-linkedin fa-lg"></i></a>
+        </div>
+        <div class="footer-section">
+            <h3 class="footer-section-title">Celcius App</h3>
+            <p>Informações precisas e atualizadas para que você possa planejar seu dia com antecedência.</p>
+        </div>
+        <div class="footer-section">
+            <h3 class="footer-section-title">Feito Por</h3>
+            <span>Breno Ortiz</span>
+            <span>2023</span>
+        </div>
+        
     </div>
 </body>
 </html>
