@@ -3,6 +3,8 @@ const APIKEY = "0d521a846cb3440a94710259230211";
 const APIURL = "https://api.weatherapi.com/v1/forecast.json";
 const APIURL_SEARCH = "https://api.weatherapi.com/v1/search.json";
 
+var landingPageContent = document.getElementById('landing-page-content');
+
 var containerCurrent = document.getElementById('day-info-container');
 var containerCurrentHours = document.getElementById('day-hours-container');
 
@@ -44,6 +46,7 @@ async function loadData(input) {
         var dataforecast = response.forecast.forecastday;
         console.log(dataforecast);
 
+        landingPageContent.style.display = 'none';
         forecastContainer.style.display = 'flex';
         sliderParentContainer.style.display = 'flex';
         moreInfoAllContainer.style.display = 'block';

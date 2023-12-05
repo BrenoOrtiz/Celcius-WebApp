@@ -13,9 +13,11 @@
 
 html{
     height: 100vh;
+    scroll-behavior: smooth;
 }
 
 body{
+    font-family: 'Nunito', sans-serif;
     margin: 0;
     height: 100%;
     background-color: #DCD9D4;
@@ -30,10 +32,49 @@ body{
 }
 
 #logo{
-    margin-top: 32px;
     height: 125px;
     aspect-ratio: 12/ 4;
 }
+
+.landing-page-content{
+    margin-top: 64px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.section-left h1{
+    font-size: 48px;
+    color: var(--text-100);
+    margin: 0 0 16px 0;
+}
+
+.section-left p{
+    color: var(--text-200);
+    font-size: 18px;
+    margin: 16px 0 32px 0;
+}
+
+#CTA-btn{
+    text-decoration: none;
+    background-color: var(--primary-100);
+    color: rgb(226, 226, 226);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+#CTA-btn:hover{
+    color: white;
+    background-color: var(--primary-200);
+}
+
+#illustration{
+    border-radius: 20% 50% 25% 35%;
+    margin-top: 64px;
+}
+
 .contentToRender{
     display: flex;
     flex-direction: column;
@@ -131,10 +172,11 @@ nav{
     border: none;
     color: var(--text-100);
     box-shadow: 0px 7px 14px rgb(95, 95, 95, 0.33);
+    scroll-margin-top: 100vh;
 }
 
 #search-input:focus{
-    outline: 1px solid var(--primary-200);
+    outline: 2px solid var(--primary-200);
     caret-color: var(--primary-200);
 }
 
@@ -289,17 +331,14 @@ nav{
 }
 
 ::-webkit-scrollbar{
-    background-color: #C4D0E3;
-}
-
-div ::-webkit-scrollbar{
-    background-color: transparent;
+    background-color: rgb(255, 255, 255, 0.5);
 }
 
 ::-webkit-scrollbar-thumb{
-    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    background-color: #00619a;
     border-radius: 10px;
 }
+
 
 
 
@@ -308,8 +347,8 @@ ul{
     display: none;
     position: absolute;
     z-index: 2;
-    top: 95px;
-    right: calc((100vw/2) - 15.25%);
+    top: 220px;
+    right: calc((100vw/2) - 17.4%);
     background-color: var(--bg-100);
     color: var(--text-200);
     width: calc(30% + 38px);
@@ -534,6 +573,7 @@ li:hover{
     background-color: var(--primary-100);
     padding: 16px 32px 16px 32px;
     margin-top: 64px;
+    box-shadow: inset 0px 6px 12px rgba(255, 255, 255, 0.6);
 }
 
 .footer-section{
