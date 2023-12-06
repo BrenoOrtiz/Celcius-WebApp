@@ -1,6 +1,6 @@
 # Celcius WebApp
  
-Um aplicativo de previsão do tempo desenvolvido em HTML, CSS e JavaScript. Oferece funcionalidades simples e intuitivas para acompanhar as condições climáticas e planejar o dia.\
+Um aplicativo de previsão do tempo desenvolvido em HTML, CSS e JavaScript. Oferece funcionalidades simples e intuitivas para acompanhar as condições climáticas e planejar o dia./
 
 A weather forecast app developed in HTML, CSS, and JavaScript. It provides straightforward and intuitive features to track weather conditions and plan your day.
 
