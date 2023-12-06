@@ -1,2 +1,2 @@
 # Celcius WebApp
- A Web Weather App with only HTML CSS JS
+ A Weather WebApp with only HTML CSS JS
