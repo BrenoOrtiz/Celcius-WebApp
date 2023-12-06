@@ -44,7 +44,6 @@ async function loadData(input) {
         var dataCurrent = response.current;
         // Dados da previsão do tempo dos prox 10 dias
         var dataforecast = response.forecast.forecastday;
-        console.log(dataforecast);
 
         landingPageContent.style.display = 'none';
         forecastContainer.style.display = 'flex';
@@ -171,17 +170,18 @@ async function loadData(input) {
             `;
         }
 
-    } catch (error){
+    } catch{
         if (city != "") {
             containerCurrent.innerHTML = `<h2 id="aviso-erro">Cidade "<span id="aviso-nome-cidade">${city}</span>" não foi encontrada</h2>`;
+            landingPageContent.style.display = 'none';
         }
         else {
             containerCurrent.innerHTML = ``; 
         }
         sliderParentContainer.style.display = 'none';
         forecastContainer.style.display = 'none';
+        moreInfoAllContainer.style.display = 'none';
         containerForecastData.innerHTML = ``;
-        console.log(error);
     }
     
 
