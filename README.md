@@ -26,5 +26,18 @@ A weather forecast app developed in HTML, CSS, JavaScript and WeatherAPI. It pro
 | Texto 200       | ![#00d1a0](https://via.placeholder.com/10/5c5c5c?text=+) #5c5c5c |
 | Fundo 100       | ![#00d1a0](https://via.placeholder.com/10/ffffff?text=+) #ffffff |
 | Fundo 200       | ![#00d1a0](https://via.placeholder.com/10/f5f5f5?text=+) #f5f5f5 |
-| Fundo 300       | ![#00d1a0](https://via.placeholder.com/10/cccccc?text=+) #cccccc |
+| Fundo 300       | ![#00d1a0](https://via.placeholder.com/10/cccccc?text=+) #cccccc | 
+
+| Cor               | Hexadecimal                                                |
+| ----------------- | ---------------------------------------------------------------- |
+| Primary 100      | ![#0a192f](https://via.placeholder.com/10/007BFF?text=+) #007BFF |
+| Primary 200       | ![#f8f8f8](https://via.placeholder.com/10/69a9ff?text=+) #f69a9ff |
+| Primary 300       | ![#00b48a](https://via.placeholder.com/10/e0ffff?text=+) #e0ffff |
+| Accent 100       | ![#00d1a0](https://via.placeholder.com/10/00BFFF?text=+) #00BFFF|
+| Accent 200       | ![#00d1a0](https://via.placeholder.com/10/00619a?text=+) #00619a |
+| Text 100       | ![#00d1a0](https://via.placeholder.com/10/333333?text=+) #333333 |
+| Text 200       | ![#00d1a0](https://via.placeholder.com/10/5c5c5c?text=+) #5c5c5c |
+| Background 100       | ![#00d1a0](https://via.placeholder.com/10/ffffff?text=+) #ffffff |
+| Background 200       | ![#00d1a0](https://via.placeholder.com/10/f5f5f5?text=+) #f5f5f5 |
+| Background 300       | ![#00d1a0](https://via.placeholder.com/10/cccccc?text=+) #cccccc |
 
