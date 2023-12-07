@@ -1,5 +1,15 @@
 
-const APIKEY = process.env.APIKEY;
+let APIKEY;
+
+async function fetchAPIKEY() {
+    
+    var response = await fetch('config.php');
+    var config = await response.text();
+
+    APIKEY = config;
+}
+
+fetchAPIKEY();
 const APIURL = "https://api.weatherapi.com/v1/forecast.json";
 const APIURL_SEARCH = "https://api.weatherapi.com/v1/search.json";
 
