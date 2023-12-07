@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
-    <script defer src="js/index.js"></script>
-    <script src="https://kit.fontawesome.com/d5fcfde473.js" crossorigin="anonymous"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/index.css">
+        <script src="https://kit.fontawesome.com/d5fcfde473.js" crossorigin="anonymous"></script>
+        <script type="module" defer src="js/index.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="content">
-
+        
         <img src="img/logo.png" alt="logo" id="logo">
         <nav>
             <label class="switch">
@@ -21,7 +21,7 @@
                 <span class="slider"></span>
                 <span class="temp-C-option temp-option">°C</span>
                 <span class="temp-F-option temp-option">°F</span>
-              </label>
+            </label>
             <i class="fa-solid fa-magnifying-glass fa-lg"></i>
             <input type="text" name="search" id="search-input" placeholder="Buscar cidade..." oninput="suggestion(this);">
             <button id="reload-btn" onclick="reload()">
@@ -31,9 +31,9 @@
         <ul id="suggestion-list">
         </ul>
         
-
+        
         <img src="img/loading-icon.png" alt="loading-icon" id="loading-icon">
-
+        
         <div class="landing-page-content" id="landing-page-content">
             <div class="section-left">
                 <h1>Previsão sem Complicações</h1>
@@ -45,7 +45,7 @@
             </div>
         </div>
 
-
+        
         <div class="contentToRender" id="content-to-render">
 
             <div class="day-info-container" id="day-info-container"></div>
@@ -57,19 +57,19 @@
                 </div>
                 <i class="fa-solid fa-chevron-right fa-xl" onclick="slideRight();"></i>
             </div>
-
-
+            
+            
             <div class="forecast-container">
                 <h2 id="title-forecast">Próximos Dias</h2>
                 <div class="forecast-data" id="forecast-data">  </div>
             </div>
-
+            
 
             <div class="more-info-container" id="more-info-container">
                 <h2 id="more-info-h2"><i class="fa-solid fa-plus fa-sm"></i>Informações</h2>
                 <div class="more-info-data" id="more-info-data"></div>
             </div>
-
+            
         </div>
 
         

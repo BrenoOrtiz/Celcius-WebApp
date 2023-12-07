@@ -1,5 +1,6 @@
 
-const APIKEY = "0d521a846cb3440a94710259230211";
+import config from '../config.js';
+
 const APIURL = "https://api.weatherapi.com/v1/forecast.json";
 const APIURL_SEARCH = "https://api.weatherapi.com/v1/search.json";
 
@@ -34,7 +35,7 @@ var loadingIcon = document.getElementById('loading-icon');
 async function loadData(input) {
     var city = input.value;
     
-    var promise = await fetch(`${APIURL}?key=${APIKEY}&q=${city}&days=10&aqi=yes&alerts=no&lang=pt`);
+    var promise = await fetch(`${APIURL}?key=${config.APIKEY}&q=${city}&days=10&aqi=yes&alerts=no&lang=pt`);
     var response = await promise.json();
     
     try {
@@ -194,12 +195,13 @@ async function reload() {
     suggestion_list.style.display = "none";
 
 }
+window.reload = reload;
 
 async function suggestion(input) {
     var inputvalue = input.value;
     var suggestion_list = document.getElementById('suggestion-list');
 
-    var promiseSuggestion = await fetch(`${APIURL_SEARCH}?key=${APIKEY}&q=${inputvalue}`);
+    var promiseSuggestion = await fetch(`${APIURL_SEARCH}?key=${config.APIKEY}&q=${inputvalue}`);
     var responseSuggestion = await promiseSuggestion.json();
 
     suggestion_list.innerHTML = ``;
@@ -214,6 +216,7 @@ async function suggestion(input) {
     }
     
 }
+window.suggestion = suggestion;
 
 async function applySuggestion(suggestion) {
     var input = document.getElementById('search-input');
@@ -230,6 +233,8 @@ async function applySuggestion(suggestion) {
     contentToRender.style.display = "flex";
 }
 
+window.applySuggestion = applySuggestion
+
 
 var currentPos = 0;
 var slideWidth = 164;
@@ -242,6 +247,8 @@ function slideLeft() {
     
 }
 
+window.slideLeft = slideLeft
+
 function slideRight() {
     var qntdVisibleCard = Math.round(sliderContainer.clientWidth / 160);
     if (currentPos < (24 - qntdVisibleCard) * 164) {
@@ -249,6 +256,8 @@ function slideRight() {
     }
     containerCurrentHours.style.right = currentPos + "px"; 
 }
+
+window.slideRight = slideRight
 
 function atualizarTemp(input) {
     if (input.checked) {
@@ -265,3 +274,5 @@ function atualizarTemp(input) {
     }
     
 }
+
+window.atualizarTemp = atualizarTemp
