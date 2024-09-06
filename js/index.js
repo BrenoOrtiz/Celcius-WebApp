@@ -1,15 +1,5 @@
 
-let APIKEY;
-
-async function fetchAPIKEY() {
-    
-    var response = await fetch('config.php');
-    var config = await response.text();
-
-    APIKEY = config;
-}
-
-fetchAPIKEY();
+let APIKEY = "0d521a846cb3440a94710259230211";
 const APIURL = "https://api.weatherapi.com/v1/forecast.json";
 const APIURL_SEARCH = "https://api.weatherapi.com/v1/search.json";
 
