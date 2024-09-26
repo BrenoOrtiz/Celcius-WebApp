@@ -131,9 +131,9 @@ nav{
 }
 
 .switch input:checked ~ .slider{
-    -webkit-transform: translateX(43px);
-    -ms-transform: translateX(43px);
-    transform: translateX(43px);
+    -webkit-transform: translateX(40px);
+    -ms-transform: translateX(40px);
+    transform: translateX(40px);
 }
 .switch input:checked ~ .temp-F-option{
     color: var(--bg-100);
@@ -145,7 +145,7 @@ nav{
 .slider{
     position: absolute;
     border-radius: 12px;
-    left: 0;
+    left: 2.5px;
     top: 2.5px;
     width: 30px;
     height: 30px;
@@ -332,17 +332,6 @@ nav{
 .fa-droplet{
     color: #00BFFF;
 }
-
-::-webkit-scrollbar{
-    background-color: rgb(255, 255, 255, 0.5);
-}
-
-::-webkit-scrollbar-thumb{
-    background-color: #00619a;
-    border-radius: 10px;
-}
-
-
 
 
 ul{
