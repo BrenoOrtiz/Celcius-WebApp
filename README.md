@@ -5,7 +5,7 @@ Um aplicativo de previsão do tempo desenvolvido em HTML, CSS, JavaScript e Weat
 A weather forecast app developed in HTML, CSS, JavaScript and WeatherAPI. It provides straightforward and intuitive features to track weather conditions and plan your day.
 
 ## Link do site | Link to WebApp:
-[Celsius]()
+[Celsius](https://brenoortiz.github.io/Celcius-WebApp/)
 
 ## Screenshot do App
 
