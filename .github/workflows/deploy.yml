@@ -25,7 +25,7 @@ jobs:
           mkdir -p dist/images
           cp index.html dist/
           cp css/index.css dist/css/
-          cp -r images/* dist/images/
+          cp -r img/* dist/img/
 
       - name: Build
         env:
