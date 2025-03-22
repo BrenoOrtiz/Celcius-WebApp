@@ -1,5 +1,5 @@
 
-const APIKEY = process.env.API_KEY;
+const APIKEY = "B_SECRET_KEY";
 const APIURL = "https://api.weatherapi.com/v1/forecast.json";
 const APIURL_SEARCH = "https://api.weatherapi.com/v1/search.json";
 
