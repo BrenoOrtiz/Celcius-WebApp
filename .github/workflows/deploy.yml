@@ -25,10 +25,10 @@ jobs:
           mkdir -p dist
           mkdir -p dist/css
           mkdir -p dist/js
-          mkdir -p dist/images
+          mkdir -p dist/img
           cp index.html dist/
           cp css/index.css dist/css/
-          cp -r images/* dist/images/
+          cp -r img/* dist/img/
 
       - name: Build
         env:
