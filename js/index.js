@@ -1,7 +1,4 @@
 
-const APIKEY = fetch('../api/key.js').then(res => res.json()).then(data => data.apiKey);
-console.log(APIKEY)
-const APIURL = "https://api.weatherapi.com/v1/forecast.json";
 const APIURL_SEARCH = "https://api.weatherapi.com/v1/search.json";
 
 var landingPageContent = document.getElementById('landing-page-content');
@@ -35,7 +32,7 @@ var loadingIcon = document.getElementById('loading-icon');
 async function loadData(input) {
     var city = input.value;
     
-    var promise = await fetch(`${APIURL}?key=${APIKEY}&q=${city}&days=10&aqi=yes&alerts=no&lang=pt`);
+    var promise = await fetch(`/api/key?city=${encodeURIComponent(city)}`);
     var response = await promise.json();
     
     try {
@@ -200,8 +197,9 @@ async function suggestion(input) {
     var inputvalue = input.value;
     var suggestion_list = document.getElementById('suggestion-list');
 
-    var promiseSuggestion = await fetch(`${APIURL_SEARCH}?key=${APIKEY}&q=${inputvalue}`);
+    var promiseSuggestion = await fetch(`/api/suggestion?city=${encodeURIComponent(inputvalue)}`);
     var responseSuggestion = await promiseSuggestion.json();
+
 
     suggestion_list.innerHTML = ``;
     if (responseSuggestion.length >= 1) {
