@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 
 const APIKEY = process.env.SECRET_API_KEY;
 const APIURL = "https://api.weatherapi.com/v1/forecast.json";
