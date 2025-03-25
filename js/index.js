@@ -1,7 +1,5 @@
-import dotenv from 'dotenv';
-dotenv.config();
 
-const APIKEY = process.env.SECRET_API_KEY;
+const APIKEY = await fetch('/api/key').then(res => res.json()).then(data => data.apiKey);
 const APIURL = "https://api.weatherapi.com/v1/forecast.json";
 const APIURL_SEARCH = "https://api.weatherapi.com/v1/search.json";
 
