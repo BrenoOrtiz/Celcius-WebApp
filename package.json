@@ -1,6 +1,0 @@
-{
-    "name": "celcius-webapp",
-    "scripts": {
-      "build": "node build.js"
-    }
-  }
