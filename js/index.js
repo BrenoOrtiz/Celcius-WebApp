@@ -1,5 +1,5 @@
 
-const APIKEY = await fetch('/api/key').then(res => res.json()).then(data => data.apiKey);
+const APIKEY = await fetch('../api/key.js').then(res => res.json()).then(data => data.apiKey);
 const APIURL = "https://api.weatherapi.com/v1/forecast.json";
 const APIURL_SEARCH = "https://api.weatherapi.com/v1/search.json";
 
